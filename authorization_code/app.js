@@ -15,7 +15,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = 'b9254c9b2a054c59b8e59fe1ea396eba'; // Your client id
 var client_secret = '2fba59dfd7314a7393774bb95b9b920b'; // Your secret
-var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
+var redirect_uri = 'http://54.172.101.167:8888/callback'; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -104,7 +104,7 @@ app.get('/callback', function(req, res) {
         });
 
         // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
+        res.redirect('http://54.172.101.167:3000/#' +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
