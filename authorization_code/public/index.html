@@ -1,9 +1,25 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Spotify Data Usage - Authorization Code flow with Spotify</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <style type="text/css">
+      *{
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      body {
+        background-color: #000000;
+        font-size: 1.2rem;
+      }
+      .container{
+        height: 80vh;
+      }
       #login, #loggedin {
         display: none;
       }
@@ -18,16 +34,21 @@
 
   <body>
     <div class="container">
-      <div id="login">
-        <h1>This is an example of the Authorization Code flow</h1>
-        <a href="/login" class="btn btn-primary">Log in with Spotify</a>
-      </div>
-      <div id="loggedin">
-        <div id="user-profile">
+      <div class="row h-100">
+        <div class="col my-auto">
+          <div id="login">
+            <p>From here you'll have the option of using either your Spotify or Facebook credentials to login, then grant the app permissions, after which you will be redirected back to the main app page. Be sure to use the account on which you do most of your listening. At no point will this app have access to your password, and you can revoke the permissions at any time in your Spotify settings. Enjoy!</p>
+            <a href="/login" class="btn btn-primary">Proceed With Login</a>
+            
+          </div>
+          <div id="loggedin">
+            <div id="user-profile">
+            </div>
+            <div id="oauth">
+            </div>
+            <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
+          </div>
         </div>
-        <div id="oauth">
-        </div>
-        <button class="btn btn-default" id="obtain-new-token">Obtain new token using the refresh token</button>
       </div>
     </div>
 
@@ -137,6 +158,11 @@
         }
       })();
     </script>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   </body>
 </html>
 
